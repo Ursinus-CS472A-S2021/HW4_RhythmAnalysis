@@ -59,11 +59,11 @@ def dft_warped(novfn):
     -------
     ndarray(N): The warped DFT
     """
-    f = np.abs(np.fft.fft(novfn))
-    ret = np.zeros_like(f)
+    dft = np.abs(np.fft.fft(novfn))
+    dftw = np.zeros_like(dft) # Warped dft to fill in
     ## TODO: Fill this in to warp the samples of f to coincide 
     ## with the samples of an autocorrelation function
-    return ret
+    return dftw
 
 
 def get_acf_dft_tempo(novfn, hop_length, sr):
