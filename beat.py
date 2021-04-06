@@ -95,7 +95,7 @@ def get_beats(novfn, sr, hop_length, tempo, alpha):
     N = len(novfn)
     cscore = np.array(novfn) # Dynamic programming array
     backlink = np.ones(N, dtype=int) # Links for backtracing
-    period = int((60*sr/hop_length)/tempo) # Period, in units of hop length, of the tempo
+    T = int((60*sr/hop_length)/tempo) # Period, in units of novfn samples per beat, of the tempo
     beats = []
 
     ## TODO: Fill this in
